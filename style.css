@@ -1,0 +1,176 @@
+/* 1. CORES PARA MODO CLARO (SISTEMA PADRÃO) */
+:root {
+    --primary: #e63946;    /* Vermelho Vivo */
+    --accent: #d4a017;     /* Dourado Leitura */
+    --bg: #ffffff;         /* Fundo Branco */
+    --card-bg: #f5f5f5;    /* Cinza Claro */
+    --text: #1a1a1a;       /* Quase Preto */
+    --text-muted: #666;    /* Cinza Escuro */
+    --border: #e0e0e0;
+    --nav-bg: rgba(255, 255, 255, 0.9);
+}
+
+/* 2. CORES PARA MODO ESCURO (DETECTA AUTOMATICAMENTE) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #0a0a0a;         /* Fundo Preto Deep */
+        --card-bg: #161616;    /* Grafite */
+        --text: #ffffff;       /* Branco */
+        --text-muted: #aaa;    /* Cinza Claro */
+        --accent: #ffb703;     /* Amarelo Vibrante */
+        --border: #222222;
+        --nav-bg: rgba(10, 10, 10, 0.9);
+    }
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+body { 
+    background-color: var(--bg); 
+    color: var(--text); 
+    transition: background 0.4s ease, color 0.4s ease;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    position: sticky; top: 0; z-index: 1000;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 900; }
+.logo span { color: var(--primary); }
+
+.status-badge {
+    font-size: 0.75rem;
+    background: rgba(43, 255, 0, 0.1);
+    color: #2bff00;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: 700;
+    display: flex; align-items: center; gap: 8px;
+}
+
+.dot { width: 8px; height: 8px; background: #2bff00; border-radius: 50%; box-shadow: 0 0 10px #2bff00; }
+
+/* Hero Section */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 80px 5%;
+    gap: 40px;
+}
+
+.badge {
+    background: var(--primary);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.hero h1 { 
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero h1 span { color: var(--primary); }
+.hero p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 35px; max-width: 500px; }
+
+.hero-actions { display: flex; gap: 15px; flex-wrap: wrap; }
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    padding: 16px 32px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-primary:hover { transform: scale(1.05); filter: brightness(1.1); }
+
+.btn-whatsapp {
+    background: #25d366;
+    color: white;
+    padding: 16px 32px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    display: flex; align-items: center; gap: 10px;
+}
+
+.hero-image img {
+    width: 100%;
+    border-radius: 40px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+}
+
+/* Menu Grid */
+.featured { padding: 80px 5%; }
+.section-header { text-align: center; margin-bottom: 60px; }
+.section-header h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 10px; }
+.section-header p { color: var(--text-muted); }
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.food-card {
+    background: var(--card-bg);
+    border-radius: 25px;
+    overflow: hidden;
+    transition: 0.4s;
+    border: 1px solid var(--border);
+}
+
+.food-card:hover { transform: translateY(-10px); border-color: var(--primary); }
+
+.food-img img { width: 100%; height: 230px; object-fit: cover; }
+
+.food-info { padding: 30px; }
+.food-info h3 { font-size: 1.5rem; margin-bottom: 12px; }
+.food-info p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 25px; }
+
+.food-footer { display: flex; justify-content: space-between; align-items: center; }
+
+.price { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+
+.btn-add {
+    background: var(--primary);
+    border: none;
+    color: white;
+    width: 45px; height: 45px;
+    border-radius: 15px;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-add:active { transform: scale(0.9); }
+
+/* Mobile */
+@media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; text-align: center; }
+    .hero h1 { margin-inline: auto; }
+    .hero p { margin-inline: auto; }
+    .hero-actions { justify-content: center; }
+    .hero-image { order: -1; }
+}
