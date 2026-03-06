@@ -1,75 +1,115 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Black Burger | Artesanal Premium</title>
+    <title>Harold's Place | Naples' Best Burger & Chickee Bar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
-    <link href="https://fonts.googleapis.com" rel="stylesheet">
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo">BLACK<span>BURGER</span></div>
-        <div class="status-badge"><span class="dot"></span> Aberto</div>
-        <a href="https://wa.me" class="btn-sm">Pedir Agora</a>
-    </nav>
-
-    <header class="hero">
-        <div class="hero-content">
-            <span class="badge">🍔 O Melhor do Bairro</span>
-            <h1>Sabor que morde <span>de volta.</span></h1>
-            <p>Blend bovino 180g, pão brioche artesanal e nossa maionese secreta. O verdadeiro xis gourmet.</p>
-            <div class="hero-actions">
-                <a href="#menu" class="btn-primary">Ver Cardápio</a>
-                <a href="https://wa.me" class="btn-whatsapp">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
-                </a>
-            </div>
-        </div>
-        <div class="hero-image">
-            <!-- Imagem de hambúrguer profissional -->
-            <img src="imagens/vecteezy_hamburger-with-cheese-and-lettuce-isolated-on-transparent_48723684.png" alt="Hambúrguer Premium">
-        </div>
+    <header class="main-header">
+        <nav class="container">
+            <div class="logo">HAROLD'S <span>PLACE</span></div>
+            <div class="menu-icon" id="menu-icon"><span></span><span></span><span></span></div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#experience">The Chickee</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#location" class="nav-cta">Visit Us</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section id="menu" class="featured">
-        <div class="section-header">
-            <h2>Destaques da Grelha</h2>
-            <p>Ingredientes selecionados e preparo na hora</p>
-        </div>
-        
-        <div class="food-grid">
-            <div class="food-card">
-                <div class="food-img">
-                    <img src="https://images.unsplash.com" alt="Burger 1">
-                </div>
-                <div class="food-info">
-                    <h3>Cheeseburger Prime</h3>
-                    <p>Cheddar inglês derretido e cebola caramelizada no shoyu.</p>
-                    <div class="food-footer">
-                        <span class="price">R$ 34,90</span>
-                        <button class="btn-add">+</button>
-                    </div>
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <span class="subtitle">A Naples Tradition Since 1982</span>
+                <h1>Where the Fun <br>Never Sets.</h1>
+                <p>Enjoy Southwest Florida's award-winning burgers under our authentic tropical Chickee hut.</p>
+                <div class="hero-btns">
+                    <a href="#menu" class="btn-fill">View Food Menu</a>
+                    <a href="#experience" class="btn-outline">Our Story</a>
                 </div>
             </div>
+        </section>
 
-            <div class="food-card">
-                <div class="food-img">
-                    <img src="https://images.unsplash.com" alt="Burger 2">
+        <section id="experience" class="stats container">
+            <div class="stat-item">
+                <h2>40+ Years</h2>
+                <p>Of Tropical Tradition</p>
+            </div>
+            <div class="stat-item">
+                <h2>#1 Burger</h2>
+                <p>Awarded in SW Florida</p>
+            </div>
+            <div class="stat-item">
+                <h2>7 Days</h2>
+                <p>Open 11AM - 11PM</p>
+            </div>
+        </section>
+
+        <section id="menu" class="container section-padding">
+            <div class="section-title">
+                <span>Dedicated to the Sheer Joy of Eating</span>
+                <h2>Local Favorites</h2>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <div class="menu-img" style="background-image: url('https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=600')"></div>
+                    <div class="menu-info">
+                        <span class="price">$16.29</span>
+                        <h3>The Famous Burger</h3>
+                        <p>Our award-winning Black Angus burger, chargrilled with secret seasoning.</p>
+                    </div>
                 </div>
-                <div class="food-info">
-                    <h3>Bacon Blast</h3>
-                    <p>Triplo bacon crocante, barbecue artesanal e queijo prato.</p>
-                    <div class="food-footer">
-                        <span class="price">R$ 38,90</span>
-                        <button class="btn-add">+</button>
+                <div class="menu-card">
+                    <div class="menu-img" style="background-image: url('https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600')"></div>
+                    <div class="menu-info">
+                        <span class="price">MKT</span>
+                        <h3>Real Gulf Grouper</h3>
+                        <p>Half-pound local fish served grilled, blackened, or fried on a fresh bun.</p>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-img" style="background-image: url('https://images.unsplash.com/photo-1534353473418-4cfa6c56fd38?auto=format&fit=crop&w=600')"></div>
+                    <div class="menu-info">
+                        <span class="price">$20.69</span>
+                        <h3>Coconut Shrimp</h3>
+                        <p>Crispy breaded shrimp served with our signature spicy tangerine sauce.</p>
                     </div>
                 </div>
             </div>
+        </section>
+    </main>
+
+    <footer id="location">
+        <div class="container footer-grid">
+            <div class="footer-section">
+                <h3>Visit Us</h3>
+                <p>2555 Tamiami Trail North</p>
+                <p>Naples, FL 34103 (At Gulfcoast Inn)</p>
+                <p><strong>Phone:</strong> (239) 263-7254</p>
+            </div>
+            <div class="footer-section">
+                <h3>Hours</h3>
+                <p>Open 7 Days a Week</p>
+                <p>11:00 AM – 11:00 PM</p>
+                <p><strong>Happy Hour:</strong> Mon-Fri (4PM-7PM)</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <p>Ohio State Alumni Home</p>
+                <p>Karaoke Sundays</p>
+            </div>
         </div>
-    </section>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Harold's Place Chickee Bar And Grill. Naples, FL.</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>

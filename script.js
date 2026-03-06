@@ -1,27 +1,29 @@
-// Efeito visual no botão de adicionar
-document.querySelectorAll('.btn-add').forEach(button => {
-    button.addEventListener('click', function() {
-        const originalContent = this.innerHTML;
-        this.innerHTML = "✓";
-        this.style.background = "#2bff00";
-        
-        setTimeout(() => {
-            this.innerHTML = originalContent;
-            this.style.background = "var(--primary)";
-        }, 1500);
+const header = document.querySelector('.main-header');
+const menuIcon = document.getElementById('menu-icon');
+const navMenu = document.getElementById('nav-menu');
 
-        // Feedback tátil simples (animação)
-        this.animate([
-            { transform: 'scale(1)' },
-            { transform: 'scale(1.3)' },
-            { transform: 'scale(1)' }
-        ], { duration: 300 });
-    });
+// Efeito na Navbar ao rolar
+window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 50);
 });
 
-// Scroll suave para o menu
-document.querySelector('.btn-primary').addEventListener('click', function(e) {
-    e.preventDefault();
-    document.querySelector('#menu').scrollIntoView({ behavior: 'smooth' });
+// Menu Mobile
+menuIcon.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    // Animação simples do ícone
+    const spans = menuIcon.querySelectorAll('span');
+    if(navMenu.classList.contains('active')) {
+        spans[0].style.transform = 'rotate(45deg) translate(5px, 6px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(5px, -6px)';
+    } else {
+        spans.forEach(s => s.style.transform = s.style.opacity = '');
+    }
 });
-a
+
+// Fecha menu ao clicar no link
+document.querySelectorAll('.nav-menu a').forEach(n => n.addEventListener('click', () => {
+    navMenu.classList.remove('active');
+    const spans = menuIcon.querySelectorAll('span');
+    spans.forEach(s => s.style.transform = s.style.opacity = '');
+}));
